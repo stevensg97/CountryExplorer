@@ -1,0 +1,21 @@
+.countries-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.country-item {
+  border-radius: 4px;
+  padding: 0.5rem;
+  width: 150px;
+  text-align: center;
+}
+
+.country-item img {
+  width: 100px;
+  height: auto;
+}
+
+hr {
+  margin-bottom: 2rem;
+}

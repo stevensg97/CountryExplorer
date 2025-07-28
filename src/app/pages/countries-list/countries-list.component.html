@@ -1,0 +1,30 @@
+<h1>Hola Mundo</h1>
+
+<input
+  type="text"
+  placeholder="Buscar país"
+  [(ngModel)]="searchTerm"
+  (keydown.enter)="loadCountries()"
+/>
+<button (click)="loadCountries()">Buscar</button>
+
+<hr />
+
+@if(countries$ | async; as countries){
+<div class="countries-list">
+  @for(country of countries; track country.name.official) {
+  <div class="country-item">
+    <img
+      [src]="country.flags.png"
+      [alt]="country.flags.alt || country.name.official"
+      width="40"
+    />
+    <p>{{ country.name.official }}</p>
+  </div>
+  }
+</div>
+}
+
+@if(errorMessage) {
+    <app-error-message [errorMessage]="errorMessage"/>
+}
